@@ -4,10 +4,10 @@ bazel_dep(name = "rules_bazelrio", version = "")
 
 local_path_override(
     module_name = "rules_bzlmodrio_jdk",
-    path = "C:/Users/PJ/git/bzlmodrio/monorepo/rules/rules_bzlmodrio_jdk"
+    path = "C:/Users/PJ/git/bzlmodrio/monorepo/rules/rules_bzlmodrio_jdk",
 )
 
 local_path_override(
     module_name = "rules_bazelrio",
-    path = ".."
+    path = "..",
 )

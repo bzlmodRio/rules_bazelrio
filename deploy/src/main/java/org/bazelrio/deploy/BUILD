@@ -1,10 +1,10 @@
-load("@rules_java//java:defs.bzl", "java_library")
+load("@rules_java//java:defs.bzl", "java_binary")
 
 java_binary(
     name = "deploy",
-    main_class = "org.bazelrio.deploy.Main",
     srcs = glob(["*.java"]),
     javacopts = ["-Werror"],
+    main_class = "org.bazelrio.deploy.Main",
     visibility = ["//visibility:public"],
     deps = [
         "@bazel_tools//tools/java/runfiles",

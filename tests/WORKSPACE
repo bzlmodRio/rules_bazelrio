@@ -1,7 +1,4 @@
-
-
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-
 
 http_archive(
     name = "rules_java",
@@ -28,35 +25,34 @@ rules_jvm_external_setup()
 
 local_repository(
     name = "rules_bazelrio",
-    path = ".."
+    path = "..",
 )
 
 load("@rules_bazelrio//:nonbzlmod_setup.bzl", "setup_rules_bazelrio")
 
 setup_rules_bazelrio()
 
-
 local_repository(
     name = "rules_bzlmodrio_jdk",
-    path = "C:/Users/PJ/git/bzlmodrio/monorepo/rules/rules_bzlmodrio_jdk"
+    path = "C:/Users/PJ/git/bzlmodrio/monorepo/rules/rules_bzlmodrio_jdk",
 )
 
 load("@rules_bzlmodrio_jdk//:maven_deps.bzl", "setup_legacy_setup_jdk_dependencies")
 
 setup_legacy_setup_jdk_dependencies()
 
-
 BZLMODRIO_COMMITISH = "77dae7eabf1517ea58cf90d854f7d9d5a81561e6"
+
 BZLMODRIO_SHA256 = "9e62b75600a972cee1bafdb6fc8d43be0690db496c421cebf2c9376d92f564e5"
+
 http_archive(
     name = "bzlmodrio",
-    url = "https://github.com/bzlmodRio/bzlmodRio/archive/{}.tar.gz".format(BZLMODRIO_COMMITISH),
     sha256 = BZLMODRIO_SHA256,
     strip_prefix = "bzlmodRio-{}".format(BZLMODRIO_COMMITISH),
+    url = "https://github.com/bzlmodRio/bzlmodRio/archive/{}.tar.gz".format(BZLMODRIO_COMMITISH),
 )
 
 load("@bzlmodrio//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
-
 
 download_dependencies(
     # allwpilib_version = WPILIB_VERSION,
@@ -81,18 +77,20 @@ download_dependencies(
     # rules_checkstyle_version = None,
 )
 
-
 load("@bzlmodrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependencies", "setup_dependencies")
-
 
 setup_dependencies()
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_artifacts, maven_repositories = get_java_dependencies()
+
 maven_install(
     name = "maven",
     artifacts = maven_artifacts + [],
-    repositories = maven_repositories + ["https://raw.githubusercontent.com/snobotsim/maven_repo/master/release", "https://raw.githubusercontent.com/snobotsim/maven_repo/master/development"],
+    repositories = maven_repositories + [
+        "https://raw.githubusercontent.com/snobotsim/maven_repo/master/release",
+        "https://raw.githubusercontent.com/snobotsim/maven_repo/master/development",
+    ],
     # maven_install_json = "//build_scripts/bazel/deps:maven_install.json",
 )

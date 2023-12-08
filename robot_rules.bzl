@@ -19,13 +19,13 @@ _get_dynamic_dependencies = rule(
 def __other_deploy_thing_impl(ctx):
     print("Other deploy")
 
-#     bin_name = ":robot"
+    #     bin_name = ":robot"
     dry_run = True
     verbose = True
     skip_dynamic_libraries = False
     is_java = False
     team_number = 213
-    
+
     output_file = ctx.actions.declare_file(ctx.label.name + ".output")
 
     data = [bin_name]
@@ -35,7 +35,7 @@ def __other_deploy_thing_impl(ctx):
     inputs = []
     inputs.append(ctx.files.robot_binary[0])
     inputs.extend(ctx.files.dynamic_deps)
-    
+
     args = ctx.actions.args()
     args.add("--robot_binary", ctx.files.robot_binary[0].path)
     args.add("--team_number", team_number)
@@ -53,7 +53,7 @@ def __other_deploy_thing_impl(ctx):
         args.add("--skip_dynamic_libraries")
     if is_java:
         args.add("--is_java")
-    
+
     ctx.actions.run(
         mnemonic = "ExampleCompile",
         executable = ctx.executable._tool,
@@ -69,21 +69,21 @@ def __other_deploy_thing_impl(ctx):
 other_deploy_thing = rule(
     implementation = __other_deploy_thing_impl,
     attrs = {
+        "dynamic_deps": attr.label(
+            mandatory = True,
+        ),
+        "robot_binary": attr.label(
+            mandatory = True,
+            allow_single_file = True,
+        ),
         "_tool": attr.label(
             default = Label("@rules_bazelrio//deploy"),
             # allow_single_file = True,
             executable = True,
             cfg = "exec",
         ),
-        "robot_binary": attr.label(
-            mandatory = True,
-            allow_single_file = True,
-        ),
-        "dynamic_deps": attr.label(
-            mandatory = True,
-        )
     },
-    executable=True
+    executable = True,
 )
 
 def __call_deploy_command(name, bin_name, lib_name, team_number, visibility, skip_dynamic_libraries, is_java, dry_run, verbose):
@@ -92,7 +92,6 @@ def __call_deploy_command(name, bin_name, lib_name, team_number, visibility, ski
         name = discover_dynamic_deps_task_name,
         target = lib_name,
     )
-
 
     other_deploy_thing(
         name = name + ".deploy",
@@ -110,9 +109,7 @@ def __call_deploy_command(name, bin_name, lib_name, team_number, visibility, ski
     # if is_java:
     #     data.append("@roborio_jre//file")
 
-    
-
-def robot_cc_binary(name, team_number, lib_name, halsim_deps = [], visibility = None, skip_dynamic_libraries=False, dry_run=False, verbose=False, **kwargs):
+def robot_cc_binary(name, team_number, lib_name, halsim_deps = [], visibility = None, skip_dynamic_libraries = False, dry_run = False, verbose = False, **kwargs):
     deps = [":" + lib_name]
 
     cc_binary(
@@ -142,7 +139,7 @@ def robot_cc_binary(name, team_number, lib_name, halsim_deps = [], visibility = 
     #     verbose = verbose,
     # )
 
-def robot_java_binary(name, team_number, main_class, runtime_deps = [], halsim_deps = [], visibility = None, skip_dynamic_libraries=False, dry_run=False, verbose=False, **kwargs):
+def robot_java_binary(name, team_number, main_class, runtime_deps = [], halsim_deps = [], visibility = None, skip_dynamic_libraries = False, dry_run = False, verbose = False, **kwargs):
     java_binary(
         name = name,
         main_class = main_class,
