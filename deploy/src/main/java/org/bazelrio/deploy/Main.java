@@ -12,7 +12,6 @@ import net.sourceforge.argparse4j.inf.Namespace;
 
 @AutoBazelRepository
 final class Main {
-
   private Main() {}
 
   public static void main(String[] args) throws IOException {

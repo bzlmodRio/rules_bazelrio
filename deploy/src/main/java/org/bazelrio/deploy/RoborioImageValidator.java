@@ -54,7 +54,6 @@ public class RoborioImageValidator {
   }
 
   private boolean verifyImageVersion(String image) {
-
     boolean foundMatch =
         VALID_IMAGE_VERSIONS.stream()
             .filter(
