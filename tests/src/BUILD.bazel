@@ -1,0 +1,18 @@
+
+load("@rules_bazelrio//:robot_rules.bzl", "robot_java_binary")
+
+
+robot_java_binary(
+    name = "robot",
+    team_number = 9999,
+    main_class = "Robot",
+    srcs = glob(["*.java"]),
+    deps = [
+        "@bzlmodrio-allwpilib//libraries/java/wpilibj",
+    ],
+    halsim_deps = ["@bzlmodrio-allwpilib//libraries/cpp/halsim_gui"],
+    # javacopts = get_default_javac_opts(),
+    dry_run = True,
+    verbose = True,
+    skip_dynamic_libraries = True,
+)

@@ -1,0 +1,98 @@
+
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+
+http_archive(
+    name = "rules_java",
+    urls = [
+        "https://github.com/bazelbuild/rules_java/releases/download/7.1.0/rules_java-7.1.0.tar.gz",
+    ],
+    # sha256 = "27abf8d2b26f4572ba4112ae8eb4439513615018e03a299f85a8460f6992f6a3",
+)
+
+http_archive(
+    name = "rules_jvm_external",
+    sha256 = "d31e369b854322ca5098ea12c69d7175ded971435e55c18dd9dd5f29cc5249ac",
+    strip_prefix = "rules_jvm_external-5.3",
+    url = "https://github.com/bazelbuild/rules_jvm_external/releases/download/5.3/rules_jvm_external-5.3.tar.gz",
+)
+
+load("@rules_jvm_external//:repositories.bzl", "rules_jvm_external_deps")
+
+rules_jvm_external_deps()
+
+load("@rules_jvm_external//:setup.bzl", "rules_jvm_external_setup")
+
+rules_jvm_external_setup()
+
+local_repository(
+    name = "rules_bazelrio",
+    path = ".."
+)
+
+load("@rules_bazelrio//:nonbzlmod_setup.bzl", "setup_rules_bazelrio")
+
+setup_rules_bazelrio()
+
+
+local_repository(
+    name = "rules_bzlmodrio_jdk",
+    path = "C:/Users/PJ/git/bzlmodrio/monorepo/rules/rules_bzlmodrio_jdk"
+)
+
+load("@rules_bzlmodrio_jdk//:maven_deps.bzl", "setup_legacy_setup_jdk_dependencies")
+
+setup_legacy_setup_jdk_dependencies()
+
+
+BZLMODRIO_COMMITISH = "77dae7eabf1517ea58cf90d854f7d9d5a81561e6"
+BZLMODRIO_SHA256 = "9e62b75600a972cee1bafdb6fc8d43be0690db496c421cebf2c9376d92f564e5"
+http_archive(
+    name = "bzlmodrio",
+    url = "https://github.com/bzlmodRio/bzlmodRio/archive/{}.tar.gz".format(BZLMODRIO_COMMITISH),
+    sha256 = BZLMODRIO_SHA256,
+    strip_prefix = "bzlmodRio-{}".format(BZLMODRIO_COMMITISH),
+)
+
+load("@bzlmodrio//private/non_bzlmod:download_dependencies.bzl", "download_dependencies")
+
+
+download_dependencies(
+    # allwpilib_version = WPILIB_VERSION,
+    # apriltaglib_version = None,
+    # imgui_version = None,
+    # libssh_version = None,
+    # navx_version = NAVX_FRC_VERSION,
+    # phoenix_version = PHOENIX_VERSION,
+    # revlib_version = REVLIB_VERSION,
+    # rules_pmd_version = "6.43.0",
+    # rules_wpi_styleguide_version = "1.0.0",
+    # photonlib_version = PHOTONLIB_JSON_1_0_VERSION,
+    # pathplannerlib_version = PATHPLANNERLIB_VERSION,
+
+    # Always the default version of these libraries
+    # rules_spotless_version = None,
+    # rules_wpi_styleguide_version = None,
+    # ni_version = None,
+    # opencv_version = None,
+    rules_bazelrio_version = None,
+    # rules_toolchains_version = None,
+    # rules_checkstyle_version = None,
+)
+
+
+load("@bzlmodrio//private/non_bzlmod:setup_dependencies.bzl", "get_java_dependencies", "setup_dependencies")
+
+
+setup_dependencies()
+
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+maven_artifacts, maven_repositories = get_java_dependencies()
+maven_install(
+    name = "maven",
+    artifacts = maven_artifacts + [],
+    repositories = maven_repositories + ["https://raw.githubusercontent.com/snobotsim/maven_repo/master/release", "https://raw.githubusercontent.com/snobotsim/maven_repo/master/development"],
+    # maven_install_json = "//build_scripts/bazel/deps:maven_install.json",
+)

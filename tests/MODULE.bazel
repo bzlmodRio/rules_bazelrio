@@ -1,0 +1,13 @@
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2024.1.1-beta-1")
+bazel_dep(name = "rules_bzlmodrio_jdk", version = "")
+bazel_dep(name = "rules_bazelrio", version = "")
+
+local_path_override(
+    module_name = "rules_bzlmodrio_jdk",
+    path = "C:/Users/PJ/git/bzlmodrio/monorepo/rules/rules_bzlmodrio_jdk"
+)
+
+local_path_override(
+    module_name = "rules_bazelrio",
+    path = ".."
+)

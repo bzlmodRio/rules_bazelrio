@@ -16,37 +16,103 @@ _get_dynamic_dependencies = rule(
     implementation = _get_dynamic_dependencies_impl,
 )
 
-def _deploy_command(name, bin_name, lib_name, team_number, robot_command, visibility):
+def __other_deploy_thing_impl(ctx):
+    print("Other deploy")
+
+#     bin_name = ":robot"
+    dry_run = True
+    verbose = True
+    skip_dynamic_libraries = False
+    is_java = False
+    team_number = 213
+    
+    output_file = ctx.actions.declare_file(ctx.label.name + ".output")
+
+    data = [bin_name]
+    # if is_java:
+    #     data.append("@roborio_jre//file")
+
+    inputs = []
+    inputs.append(ctx.files.robot_binary[0])
+    inputs.extend(ctx.files.dynamic_deps)
+    
+    args = ctx.actions.args()
+    args.add("--robot_binary", ctx.files.robot_binary[0].path)
+    args.add("--team_number", team_number)
+    args.add("--dynamic_libraries")
+    for dep in ctx.files.dynamic_deps:
+        args.add(dep.path)
+
+    print(args)
+
+    if dry_run:
+        args.add("--dry_run")
+    if verbose:
+        args.add("--verbose")
+    if skip_dynamic_libraries:
+        args.add("--skip_dynamic_libraries")
+    if is_java:
+        args.add("--is_java")
+    
+    ctx.actions.run(
+        mnemonic = "ExampleCompile",
+        executable = ctx.executable._tool,
+        arguments = [args],
+        inputs = inputs,
+        outputs = [output_file],
+    )
+
+    return [DefaultInfo(
+        executable = output_file,
+    )]
+
+other_deploy_thing = rule(
+    implementation = __other_deploy_thing_impl,
+    attrs = {
+        "_tool": attr.label(
+            default = Label("@rules_bazelrio//deploy"),
+            # allow_single_file = True,
+            executable = True,
+            cfg = "exec",
+        ),
+        "robot_binary": attr.label(
+            mandatory = True,
+            allow_single_file = True,
+        ),
+        "dynamic_deps": attr.label(
+            mandatory = True,
+        )
+    },
+    executable=True
+)
+
+def __call_deploy_command(name, bin_name, lib_name, team_number, visibility, skip_dynamic_libraries, is_java, dry_run, verbose):
     discover_dynamic_deps_task_name = lib_name + ".discover_dynamic_deps"
     _get_dynamic_dependencies(
         name = discover_dynamic_deps_task_name,
         target = lib_name,
     )
 
-    data = [bin_name, discover_dynamic_deps_task_name]
 
-    java_binary(
-        name = name,
-        runtime_deps = ["@rules_bazelrio//deploy"],
-        main_class = "org.bazelrio.deploy.Deploy",
-        visibility = visibility,
-        args = [
-            "--robot_binary",
-            "$(location {})".format(bin_name),
-            "--robot_command",
-            "'{}'".format(robot_command),
-            "--team_number",
-            str(team_number),
-            "--dynamic_libraries",
-            "$(locations {})".format(discover_dynamic_deps_task_name),
-        ],
-        data = data,
-        target_compatible_with = [
-            #  "@bazelrio//constraints/is_roborio:true",
-        ],
+    other_deploy_thing(
+        name = name + ".deploy",
+        robot_binary = name + "_deploy.jar",
+        dynamic_deps = discover_dynamic_deps_task_name,
+        # lib_name = name,
+        # team_number = team_number,
+        # visibility = visibility,
+        # skip_dynamic_libraries = skip_dynamic_libraries,
+        # is_java = True,
+        # dry_run = dry_run,
+        # verbose = verbose,
     )
+    # data = [bin_name, discover_dynamic_deps_task_name]
+    # if is_java:
+    #     data.append("@roborio_jre//file")
 
-def robot_cc_binary(name, team_number, lib_name, halsim_deps = [], visibility = None, **kwargs):
+    
+
+def robot_cc_binary(name, team_number, lib_name, halsim_deps = [], visibility = None, skip_dynamic_libraries=False, dry_run=False, verbose=False, **kwargs):
     deps = [":" + lib_name]
 
     cc_binary(
@@ -64,16 +130,19 @@ def robot_cc_binary(name, team_number, lib_name, halsim_deps = [], visibility = 
             visibility = visibility,
         )
 
-    _deploy_command(
-        name = name + ".deploy",
-        bin_name = name,
-        lib_name = lib_name,
-        team_number = team_number,
-        robot_command = "{}",
-        visibility = visibility,
-    )
+    # _deploy_command(
+    #     name = name + ".deploy",
+    #     bin_name = name,
+    #     lib_name = lib_name,
+    #     team_number = team_number,
+    #     robot_command = "{}",
+    #     visibility = visibility,
+    #     is_java = False,
+    #     dry_run = dry_run,
+    #     verbose = verbose,
+    # )
 
-def robot_java_binary(name, team_number, main_class, runtime_deps = [], halsim_deps = [], visibility = None, **kwargs):
+def robot_java_binary(name, team_number, main_class, runtime_deps = [], halsim_deps = [], visibility = None, skip_dynamic_libraries=False, dry_run=False, verbose=False, **kwargs):
     java_binary(
         name = name,
         main_class = main_class,
@@ -95,11 +164,14 @@ def robot_java_binary(name, team_number, main_class, runtime_deps = [], halsim_d
             ],
         )
 
-    _deploy_command(
-        name = name + ".deploy",
+    __call_deploy_command(
+        name = name,
         bin_name = name + "_deploy.jar",
         lib_name = name,
         team_number = team_number,
         visibility = visibility,
-        robot_command = "/usr/local/frc/JRE/bin/java -XX:+UseConcMarkSweepGC -Djava.library.path=/usr/local/frc/third-party/lib -Djava.lang.invoke.stringConcat=BC_SB -jar {}",
+        skip_dynamic_libraries = skip_dynamic_libraries,
+        is_java = True,
+        dry_run = dry_run,
+        verbose = verbose,
     )
