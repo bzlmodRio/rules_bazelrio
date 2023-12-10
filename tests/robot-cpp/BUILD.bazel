@@ -1,0 +1,17 @@
+load("@rules_bazelrio//:robot_rules.bzl", "robot_cc_binary")
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "robot-lib",
+    srcs = ["robot.cpp"],
+    deps = [
+        "@bzlmodrio-allwpilib//libraries/cpp/wpilibc",
+    ],
+)
+
+robot_cc_binary(
+    name = "robot",
+    halsim_deps = ["@bzlmodrio-allwpilib//libraries/cpp/halsim_gui"],
+    lib_name = "robot-lib",
+    team_number = 9999,
+)
