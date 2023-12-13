@@ -11,15 +11,15 @@ jobs:
       fail-fast: false
       matrix:
         include:
-        # Build standard, native
+        # Build bzlmod, native
         - { name: "windows - bzlmod native", os: windows-latest, command: "build",  config: "", bazel_options: "--output_user_root=C:\\bazelroot", }
         - { name: "ubuntu  - bzlmod native", os: ubuntu-latest,  command: "build",  config: "", bazel_options: "",                                 }
         - { name: "macos   - bzlmod native", os: macos-latest,   command: "build",  config: "", bazel_options: "",                                 }
 
-        # Build bzlmod, native
-        - { name: "windows - bzlmod native", os: windows-latest, command: "build",  config: "--enable_bzlmod", bazel_options: "--output_user_root=C:\\bazelroot", }
-        - { name: "ubuntu  - bzlmod native", os: ubuntu-latest,  command: "build",  config: "--enable_bzlmod", bazel_options: "",                                 }
-        - { name: "macos   - bzlmod native", os: macos-latest,   command: "build",  config: "--enable_bzlmod", bazel_options: "",                                 }
+        # Build non-bzlmod, native
+        - { name: "windows - bzlmod native", os: windows-latest, command: "build",  config: "--noenable_bzlmod", bazel_options: "--output_user_root=C:\\bazelroot", }
+        - { name: "ubuntu  - bzlmod native", os: ubuntu-latest,  command: "build",  config: "--noenable_bzlmod", bazel_options: "",                                 }
+        - { name: "macos   - bzlmod native", os: macos-latest,   command: "build",  config: "--noenable_bzlmod", bazel_options: "",                                 }
 
     name: "Build - ${{ matrix.name }}"
     runs-on: ${{ matrix.os }}
