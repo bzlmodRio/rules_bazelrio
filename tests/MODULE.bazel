@@ -1,7 +1,7 @@
 bazel_dep(name = "rules_bazelrio", version = "")
 bazel_dep(name = "bzlmodrio-allwpilib", version = "2025.1.1")
 bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2025-1.bcr2")
-bazel_dep(name = "rules_cc", version = "0.0.9")
+bazel_dep(name = "rules_cc", version = "0.1.1")
 bazel_dep(name = "rules_wpi_styleguide", version = "2024.11.19")
 bazel_dep(name = "rules_checkstyle", version = "10.12.2")
 bazel_dep(name = "rules_pmd", version = "7.2.0")
