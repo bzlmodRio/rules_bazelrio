@@ -5,9 +5,9 @@ module(
 )
 
 bazel_dep(name = "platforms", version = "0.0.11")
-bazel_dep(name = "rules_java", version = "8.12.0")
-bazel_dep(name = "rules_cc", version = "0.1.4")
-bazel_dep(name = "rules_jvm_external", version = "6.3")
+bazel_dep(name = "rules_java", version = "8.16.1")
+bazel_dep(name = "rules_cc", version = "0.2.13")
+bazel_dep(name = "rules_jvm_external", version = "6.8")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(

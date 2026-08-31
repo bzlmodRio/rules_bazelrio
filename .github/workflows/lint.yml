@@ -27,7 +27,7 @@ jobs:
           sudo sh -c "echo 'deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-14 main' >> /etc/apt/sources.list.d/proposed-repositories.list"
           sudo apt-get update -q
           sudo apt-get install -y clang-format-14
-      - run: bazel run --noenable_bzlmod --enable_workspace @rules_wpiformat//wpiformat -- -f ..
+      - run: bazel run @rules_wpiformat//wpiformat -- -f ..
         working-directory: tests
         if: github.ref != 'refs/heads/main'
 
@@ -37,22 +37,10 @@ jobs:
     name: "buildifier"
     runs-on: ubuntu-22.04
     steps:
-      - name: Set up Go
-        uses: actions/setup-go@v6
-        with:
-          go-version: "1.25"
-          cache: false
-        id: go
-
       - uses: actions/checkout@v4
 
-      - name: Install Buildifier
-        run: |
-          cd $(mktemp -d)
-          GO111MODULE=on go install github.com/bazelbuild/buildtools/buildifier@latest
-
       - name: Run buildifier
-        run: buildifier -warnings all --lint=fix -r .
+        run: bazel run //:buildifier.fix
 
       - name: Check Output
         run: git --no-pager diff --exit-code HEAD

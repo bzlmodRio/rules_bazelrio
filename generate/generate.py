@@ -43,9 +43,7 @@ def main():
     write_shared_test_files(REPO_DIR, group)
 
     template_files = [
-        "WORKSPACE",
         "MODULE.bazel",
-        "tests/WORKSPACE",
         "tests/MODULE.bazel",
     ]
 
