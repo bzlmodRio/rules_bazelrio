@@ -47,6 +47,8 @@
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bazel_skylib/1.8.1/MODULE.bazel": "88ade7293becda963e0e3ea33e7d54d3425127e0a326e0d17da085a5f1f03ff6",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bazel_skylib/1.8.2/MODULE.bazel": "69ad6927098316848b34a9142bcc975e018ba27f08c4ff403f50c1b6e646ca67",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bazel_skylib/1.8.2/source.json": "34a3c8bcf233b835eb74be9d628899bb32999d3e0eadef1947a0a562a2b16ffb",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/buildifier_prebuilt/8.5.1.2/MODULE.bazel": "9a6e0a2e87d1e3da679e157da5192ea351d5739ca1ff51831c2b736d5b6034de",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/buildifier_prebuilt/8.5.1.2/source.json": "33e11b3bf11e39cb762480a7e6ea1d24d044636135cdd8b8e74b07ebcd3b8d8b",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/buildozer/7.1.2/MODULE.bazel": "2e8dd40ede9c454042645fd8d8d0cd1527966aa5c919de86661e62953cd73d84",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/buildozer/7.1.2/source.json": "c9028a501d2db85793a6996205c8de120944f50a0d570438fcae0457a5f9d1f8",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-allwpilib/2026.1.1/MODULE.bazel": "71a817e0a62687bc20ffba8df30c287ddf615843cdc794bf053c354cfa0d7e97",
@@ -103,8 +105,9 @@
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_bzlmodrio_jdk/17.0.12-7.bcr1/source.json": "261c3de3cc7d8e1c9f56b6fce87e3e5c256a81e08750568829fce92b9ad690e9",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_bzlmodrio_toolchains/2025-1.bcr4/MODULE.bazel": "5747793f9d36d55ecab212b1af2f4292fbf4dafed00ee5d4b09e726d5eb68773",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_bzlmodrio_toolchains/2025-1.bcr5/MODULE.bazel": "9bcb97d90efa95cf28b2bac35915deff1e8b0c783b1d41221dda44f204202ba6",
-    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_bzlmodrio_toolchains/2025-1.bcr5/source.json": "8bdde517164b0eb8875e484c990aa1b3a4669b61d92f50641a3a75f31d2e52f9",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_bzlmodrio_toolchains/2025-1/MODULE.bazel": "81e540a541aac221fc84fc24124b8e5d07e2eff75942f44e67510c56794a5f22",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_bzlmodrio_toolchains/2025-2/MODULE.bazel": "f8f29556c285c8e8c2d596d8bde5bdfffb220084f4e40a5c00ab76c33151b82c",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_bzlmodrio_toolchains/2025-2/source.json": "b29539eff51c4a278aa12d891fd267f27bf1416707ecbea3fb4dddc3a6193c26",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_cc/0.0.1/MODULE.bazel": "cb2aa0747f84c6c3a78dad4e2049c154f08ab9d166b1273835a8174940365647",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_cc/0.0.10/MODULE.bazel": "ec1705118f7eaedd6e118508d3d26deba2a4e76476ada7e0e3965211be012002",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_cc/0.0.13/MODULE.bazel": "0e8529ed7b323dad0775ff924d2ae5af7640b23553dfcd4d34344c7e7a867191",
@@ -190,7 +193,8 @@
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_shell/0.2.0/MODULE.bazel": "fda8a652ab3c7d8fee214de05e7a9916d8b28082234e8d2c0094505c5268ed3c",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_shell/0.3.0/MODULE.bazel": "de4402cd12f4cc8fda2354fce179fdb068c0b9ca1ec2d2b17b3e21b24c1a937b",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_shell/0.4.0/MODULE.bazel": "0f8f11bb3cd11755f0b48c1de0bbcf62b4b34421023aa41a2fc74ef68d9584f0",
-    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_shell/0.4.0/source.json": "1d7fa7f941cd41dc2704ba5b4edc2e2230eea1cc600d80bd2b65838204c50b95",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_shell/0.6.1/MODULE.bazel": "72e76b0eea4e81611ef5452aa82b3da34caca0c8b7b5c0c9584338aa93bae26b",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_shell/0.6.1/source.json": "20ec05cd5e592055e214b2da8ccb283c7f2a421ea0dc2acbf1aa792e11c03d0c",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_spotless/2.40.0.bcr1/MODULE.bazel": "05c52ab64386e07ff38822c7661ca4cb0104d4425eeb980854dbfd40af29e04f",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_spotless/2.40.0.bcr1/source.json": "9cca21b86b9f0806ce4e5c7bb59a905a34c5b0aa519c464be4647d0b7327e37e",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_swift/1.16.0/MODULE.bazel": "4a09f199545a60d09895e8281362b1ff3bb08bbde69c6fc87aff5b92fcc916ca",
@@ -4753,8 +4757,8 @@
     },
     "@@bzlmodrio-ni+//:maven_cpp_deps.bzl%setup_bzlmodrio_ni_cpp_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "QGCPM4hu9OxQoVJ3CuzOhUG7jjj6l4F4j2lFzj3xOa4=",
-        "usagesDigest": "OCIA9NSglmIFnEwtqY5JINvczP3+i/hjZzmYb4/5Dnk=",
+        "bzlTransitiveDigest": "N8pRBSMn+RN9UkvRlLsXSdOwRNknkHL+fdgDryaRn1U=",
+        "usagesDigest": "lPM/l29N8WFCrJExOUMOpMv13DgRIGoViuy778Lk7xU=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4762,56 +4766,56 @@
           "bazelrio_edu_wpi_first_ni-libraries_chipobject_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/chipobject/2025.2.0/chipobject-2025.2.0-headers.zip",
-              "sha256": "5b0f685890fe02fc5da0c64a8b7755a1e4cc1debd107717673f17ba1c0e37742",
+              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/chipobject/2026.1.0/chipobject-2026.1.0-headers.zip",
+              "sha256": "77c60c8b9288df0b8fc28b2202d9d40cd9e0fc44001f260582b16be471f33228",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_edu_wpi_first_ni-libraries_chipobject_linuxathena": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/chipobject/2025.2.0/chipobject-2025.2.0-linuxathena.zip",
-              "sha256": "496744d042da65a3550a0dcf9a789b91bc00b63605a54aa81a649ebdd19a4118",
+              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/chipobject/2026.1.0/chipobject-2026.1.0-linuxathena.zip",
+              "sha256": "84dc94f502be6ca0d4385bf6564dcf350dfcdb54e409ea1350c6acc08c1f8ed6",
               "build_file": "@@bzlmodrio-ni+//private/cpp/chipobject:shared.BUILD.bazel"
             }
           },
           "bazelrio_edu_wpi_first_ni-libraries_visa_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/visa/2025.2.0/visa-2025.2.0-headers.zip",
-              "sha256": "fad1ef38ba5a709a91a933a5d521e7d146f1407edf29d987265f33d61f16da0c",
+              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/visa/2026.1.0/visa-2026.1.0-headers.zip",
+              "sha256": "65f3fc529ed2260b458f1cfc800578b297b4e7fab9d14f000db1b3ef254a5c0f",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_edu_wpi_first_ni-libraries_visa_linuxathena": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/visa/2025.2.0/visa-2025.2.0-linuxathena.zip",
-              "sha256": "f2dde55ef52bf6aecdfdae1f43716dbbc011dfcfe5b943bf81f4faf03d619f8c",
+              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/visa/2026.1.0/visa-2026.1.0-linuxathena.zip",
+              "sha256": "7961ec53abfcde252189e4bbb1452cf7e700cd799a2386156e4d4d77a02f490c",
               "build_file": "@@bzlmodrio-ni+//private/cpp/visa:shared.BUILD.bazel"
             }
           },
           "bazelrio_edu_wpi_first_ni-libraries_runtime_linuxathena": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/runtime/2025.2.0/runtime-2025.2.0-linuxathena.zip",
-              "sha256": "2ed343829504083dfda65e552b734b91ed5c9d3bd96451a0ff2c183775600d39",
+              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/runtime/2026.1.0/runtime-2026.1.0-linuxathena.zip",
+              "sha256": "be5873ba03c2bae88b2c8b23b2003b077370fb1767e700e8042bcfdae854e5a2",
               "build_file": "@@bzlmodrio-ni+//private/cpp/runtime:shared.BUILD.bazel"
             }
           },
           "bazelrio_edu_wpi_first_ni-libraries_netcomm_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/netcomm/2025.2.0/netcomm-2025.2.0-headers.zip",
-              "sha256": "9a652d8bffe6304ab80bedeabf74352421413b3751ff0e7eec54f6fe1262112a",
+              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/netcomm/2026.1.0/netcomm-2026.1.0-headers.zip",
+              "sha256": "bd3d004d6c24bdd31b9b00721da89d3159a855f4aeb9c41d7001507519870141",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_edu_wpi_first_ni-libraries_netcomm_linuxathena": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/netcomm/2025.2.0/netcomm-2025.2.0-linuxathena.zip",
-              "sha256": "b724a736c9924a2dc0d99cf5e0979fb582185d577cdcce768335825ab2f4b9f0",
+              "url": "https://frcmaven.wpi.edu/release/edu/wpi/first/ni-libraries/netcomm/2026.1.0/netcomm-2026.1.0-linuxathena.zip",
+              "sha256": "49252087166fabbb2f31d73d1c9ecb9341953e2b0b42abe59baab70008db21f9",
               "build_file": "@@bzlmodrio-ni+//private/cpp/netcomm:shared.BUILD.bazel"
             }
           }
@@ -5520,18 +5524,17 @@
         ]
       }
     },
-    "@@rules_bzlmodrio_toolchains+//:extensions.bzl%sh_configure": {
+    "@@rules_bzlmodrio_toolchains+//:extensions.bzl%cfg": {
       "general": {
-        "bzlTransitiveDigest": "znAfQPH+PP/xmq1YA1rIBbw/js8K6hK1jKsLaRzVh5A=",
-        "usagesDigest": "DpVwOZ7guqusd6ZSLMRh9paHq3E6XuqljYPqWnNguPg=",
+        "bzlTransitiveDigest": "DhgJ+yfXuTo6NfJqy0Yk6AMrlg1mqXZVqmE/ndVBgjE=",
+        "usagesDigest": "j42+kk/Zy2qXeYHffr1tOfXrtZq05JzRujC/FAu1hvI=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
         "generatedRepoSpecs": {
-          "local_bookworm_32": {
+          "local_bookworm32": {
             "repoRuleId": "@@rules_bzlmodrio_toolchains+//toolchains:configure_cross_compiler.bzl%configure_cross_compiler",
             "attributes": {
-              "compiler": "bookworm-32",
               "bin_subfolder": "bookworm/bin",
               "bin_prefix": "armv7-bookworm-linux-gnueabihf-",
               "sysroot_subfolder": "bookworm/arm-linux-gnueabihf/sysroot",
@@ -5539,13 +5542,12 @@
               "target_cpu": "armv7",
               "target_system_name": "arm-linux-gnueabihf",
               "sysroot_include_folder": "arm-linux-gnueabihf",
-              "repo_shortname": "bookworm_32"
+              "repo_shortname": "bookworm32"
             }
           },
-          "local_bookworm_64": {
+          "local_bookworm64": {
             "repoRuleId": "@@rules_bzlmodrio_toolchains+//toolchains:configure_cross_compiler.bzl%configure_cross_compiler",
             "attributes": {
-              "compiler": "bookworm-64",
               "bin_subfolder": "bookworm/bin",
               "bin_prefix": "aarch64-bookworm-linux-gnu-",
               "sysroot_subfolder": "bookworm/aarch64-linux-gnu/sysroot",
@@ -5553,41 +5555,12 @@
               "target_cpu": "armv8a",
               "target_system_name": "aarch64-linux-gnu",
               "sysroot_include_folder": "aarch64-linux-gnu",
-              "repo_shortname": "bookworm_64"
+              "repo_shortname": "bookworm64"
             }
           },
-          "local_bullseye_32": {
+          "local_rp_bookworm32": {
             "repoRuleId": "@@rules_bzlmodrio_toolchains+//toolchains:configure_cross_compiler.bzl%configure_cross_compiler",
             "attributes": {
-              "compiler": "bullseye-32",
-              "bin_subfolder": "bullseye/bin",
-              "bin_prefix": "armv7-bullseye-linux-gnueabihf-",
-              "sysroot_subfolder": "bullseye/arm-linux-gnueabihf/sysroot",
-              "cxx_version": "10",
-              "target_cpu": "armv7",
-              "target_system_name": "arm-linux-gnueabihf",
-              "sysroot_include_folder": "arm-linux-gnueabihf",
-              "repo_shortname": "bullseye_32"
-            }
-          },
-          "local_bullseye_64": {
-            "repoRuleId": "@@rules_bzlmodrio_toolchains+//toolchains:configure_cross_compiler.bzl%configure_cross_compiler",
-            "attributes": {
-              "compiler": "bullseye-64",
-              "bin_subfolder": "bullseye/bin",
-              "bin_prefix": "aarch64-bullseye-linux-gnu-",
-              "sysroot_subfolder": "bullseye/aarch64-linux-gnu/sysroot",
-              "cxx_version": "10",
-              "target_cpu": "armv8a",
-              "target_system_name": "aarch64-linux-gnu",
-              "sysroot_include_folder": "aarch64-linux-gnu",
-              "repo_shortname": "bullseye_64"
-            }
-          },
-          "local_raspi_bookworm_32": {
-            "repoRuleId": "@@rules_bzlmodrio_toolchains+//toolchains:configure_cross_compiler.bzl%configure_cross_compiler",
-            "attributes": {
-              "compiler": "raspi-bookworm-32",
               "bin_subfolder": "raspi-bookworm/bin",
               "bin_prefix": "armv6-bookworm-linux-gnueabihf-",
               "sysroot_subfolder": "raspi-bookworm/arm-linux-gnueabihf/sysroot",
@@ -5595,27 +5568,12 @@
               "target_cpu": "armv7",
               "target_system_name": "arm-linux-gnueabihf",
               "sysroot_include_folder": "arm-linux-gnueabihf",
-              "repo_shortname": "raspi_bookworm_32"
-            }
-          },
-          "local_raspi_bullseye_32": {
-            "repoRuleId": "@@rules_bzlmodrio_toolchains+//toolchains:configure_cross_compiler.bzl%configure_cross_compiler",
-            "attributes": {
-              "compiler": "raspi-bullseye-32",
-              "bin_subfolder": "raspi-bullseye/bin",
-              "bin_prefix": "armv6-bullseye-linux-gnueabihf-",
-              "sysroot_subfolder": "raspi-bullseye/arm-linux-gnueabihf/sysroot",
-              "cxx_version": "10",
-              "target_cpu": "armv7",
-              "target_system_name": "arm-linux-gnueabihf",
-              "sysroot_include_folder": "arm-linux-gnueabihf",
-              "repo_shortname": "raspi_bullseye_32"
+              "repo_shortname": "rp_bookworm32"
             }
           },
           "local_roborio": {
             "repoRuleId": "@@rules_bzlmodrio_toolchains+//toolchains:configure_cross_compiler.bzl%configure_cross_compiler",
             "attributes": {
-              "compiler": "roborio",
               "bin_subfolder": "roborio-academic/bin",
               "bin_prefix": "arm-frc2025-linux-gnueabi-",
               "sysroot_subfolder": "roborio-academic/arm-nilrt-linux-gnueabi/sysroot",
@@ -5629,7 +5587,9 @@
           "local_systemcore": {
             "repoRuleId": "@@rules_bzlmodrio_toolchains+//toolchains:configure_cross_compiler.bzl%configure_cross_compiler",
             "attributes": {
-              "compiler": "systemcore",
+              "extra_defines": [
+                "-D__FRC_SYSTEMCORE__=1"
+              ],
               "bin_subfolder": "bookworm/bin",
               "bin_prefix": "aarch64-bookworm-linux-gnu-",
               "sysroot_subfolder": "bookworm/aarch64-linux-gnu/sysroot",

@@ -4,6 +4,7 @@ module(
     compatibility_level = {{group.year}},
 )
 
+bazel_dep(name = "buildifier_prebuilt", version = "8.5.1.2")
 {{bazel_dependencies.platforms.module_dep()}}
 {{bazel_dependencies.rules_java.module_dep()}}
 {{bazel_dependencies.rules_cc.module_dep()}}

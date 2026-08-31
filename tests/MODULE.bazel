@@ -1,6 +1,6 @@
 bazel_dep(name = "rules_bazelrio", version = "")
 bazel_dep(name = "bzlmodrio-allwpilib", version = "2026.1.1")
-bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2025-2")
+bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2025-1.bcr5")
 bazel_dep(name = "rules_jvm_external", version = "6.8")
 bazel_dep(name = "rules_cc", version = "0.2.13")
 bazel_dep(name = "rules_wpi_styleguide", version = "2025.06.22")
