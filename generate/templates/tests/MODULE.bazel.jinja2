@@ -1,6 +1,7 @@
 bazel_dep(name = "rules_bazelrio", version = "")
-bazel_dep(name = "bzlmodrio-allwpilib", version = "2025.1.1")
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2026.1.1")
 {{ mandatory_dependencies.rules_bzlmodrio_toolchain.module_dep() }}
+{{ bazel_dependencies.rules_jvm_external.module_dep() }}
 {{ bazel_dependencies.rules_cc.module_dep() }}
 {{ mandatory_dependencies.rules_wpi_styleguide.module_dep() }}
 {{ mandatory_dependencies.rules_checkstyle.module_dep() }}
@@ -12,4 +13,26 @@ bazel_dep(name = "bzlmodrio-allwpilib", version = "2025.1.1")
 local_path_override(
     module_name = "rules_bazelrio",
     path = ".."
+)
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    artifacts = [
+        "org.junit.jupiter:junit-jupiter-api:5.10.1",
+        "org.junit.jupiter:junit-jupiter-params:5.10.1",
+        "org.junit.jupiter:junit-jupiter-engine:5.10.1",
+        "org.junit.platform:junit-platform-commons:1.6.1",
+        "org.junit.platform:junit-platform-console:1.6.1",
+        "org.junit.platform:junit-platform-engine:1.6.1",
+        "org.junit.platform:junit-platform-launcher:1.6.1",
+        "org.junit.platform:junit-platform-suite-api:1.6.1",
+    ],
+    repositories = [
+        "https://repo1.maven.org/maven2",
+        "https://frcmaven.wpi.edu/artifactory/release/",
+    ],
+)
+use_repo(
+    maven,
+    "maven",
 )
